@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="welcome-section">
+        <h1 class="welcome-text">Welcome</h1>
+        
+        <div class="image-slider">
+            <button class="slider-btn left-btn" onclick="prevImage()">❮</button>
+            <img id="sliderImage" src="image1.jpg" alt="Slider Image">
+            <button class="slider-btn right-btn" onclick="nextImage()">❯</button>
+        </div>
+
+        <div class="message-box">
+            <input type="text" id="customMessage" placeholder="Enter your message ❤️">
+            <button class="send-btn" onclick="showMessage()">💌</button>
+        </div>
+        
+        <p id="displayedMessage"></p>
+        
+        <div class="heart-container"></div>
+    </div>
+
+    <div class="road-section">
+        <img class="bus-image" src="movingbus.png" alt="Moving Bus">
+
+        <div class="lineforbus">
+
+            <div class="road-line"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Image Slider Logic
+        let images = ["image1.jpg", "image2.jpg", "image3.jpg"];
+        let currentIndex = 0;
+        let sliderImage = document.getElementById("sliderImage");
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            sliderImage.src = images[currentIndex];
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            sliderImage.src = images[currentIndex];
+        }
+
+        // Display Custom Message
+        function showMessage() {
+            let message = document.getElementById("customMessage").value;
+            document.getElementById("displayedMessage").innerText = message;
+        }
+
+        // Floating Heart Effect
+        document.addEventListener("click", function(event) {
+            let heart = document.createElement("div");
+            heart.innerText = "❤️";
+            heart.style.position = "absolute";
+            heart.style.left = event.clientX + "px";
+            heart.style.top = event.clientY + "px";
+            heart.style.animation = "floatHeart 2s linear";
+            
+            document.body.appendChild(heart);
+            
+            setTimeout(() => { heart.remove(); }, 2000);
+        });
+
+    </script>
+
+</body>
+</html>

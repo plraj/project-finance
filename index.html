@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal finance and expens tacker </title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="css\index.css">
+    <link rel="stylesheet" href="index_js.js">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    
+  <div id="navbar-container">
+  </div>
+
+  <!-- landing page image secction -->
+  <div class="section container-fluid">
+    <div class="row landing_bg">
+      <div class="big_ld_img_cont col-lg-6 d-flex justify-content-center">
+        <div class="ld_img ">
+          <img src="https://img.freepik.com/premium-photo/3d-flat-cartoon-expense-tracker-financial-planning-budgeting-symbol-with-money-management-theme_980716-171158.jpg" alt="">
+        </div>
+      </div>
+      <div class="col-lg-6 d-flex flex-colum justify-content-center ">
+        <div class="ld_txt">
+            <h2 class="text-success">Simple way </span></h2>
+            <h3>To manage <span class="text-success"> personal finance </span></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- dashboardh to show data  -->
+
+  <div class="section container-fluid text-center">
+    <div class="sdashld_pg ">
+      <div class="sdash_container container ">
+        <div class=" container">
+
+          <div class="sdash_cnt_top row flex-lg-nowrap mb-3">
+  
+            <!-- here we will show all data in graph fomrate what you are in profite or loss  -->
+            <div class="sdash_sect col-lg-7 col-md-12 ">
+              <div class="sdash_box">
+                  <div class="sdashbox_txt">
+                    <div class="chart-container">
+                        <h2>Weekly Comparison <span class="dropdown">&#9662;</span></h2>
+                        <canvas id="weeklyChart"></canvas>
+                    </div>
+                  </div>
+                  <div class="sdash_btn">
+                      <button> View More</button>
+                  </div>
+              </div>
+            </div>
+            <!-- here we will show data in circle graph formate expense , profite ,loss like this  -->
+            <div class="sdash_box_grph col-lg-5 col-md-12">
+              <div class="sdash_box_grph_cont">
+                <div class="sdash_ghpr_data">
+                  <div class="card border-0">
+                    <div class="card_had_txt">
+                      <h2>Target & Achievement</h2>
+                    </div>
+                    <div class="card_header_txt d-flex justify-content-between align-items-cetner">
+                        <p>$20,000</p>
+                        <p>May, 2023</p>
+                    </div>
+            
+                    <div class="card_hed_data d-flex align-items-cetner">
+
+                      <div class="targets">
+                          <div class="target-item">
+                              <p>🏆 Target Achieved</p>
+                              <h3 id="achievedValue">$12,500</h3>
+                          </div>
+                          <div class="target-item">
+                              <p>🎯 This month Target</p>
+                              <h3>$20,000</h3>
+                          </div>
+                      </div>
+              
+                      <div class="gauge-container">
+                        <div class="gauage_cont_canv">
+                          <canvas id="gaugeChart"></canvas>
+                          <div class="gauge-needle" id="needle"></div>
+                          <div class="gauge-value" id="gaugeText">0</div>
+                        </div>
+                        <p class="gauge-label">Target vs Achievement</p>
+                      </div>
+                    </div>
+            
+                </div>
+                </div>
+                  <div class="sdash_btn">
+                    <button> View More</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row flex-lg-nowrap mb-2">
+            <!-- here we will show report types ddata  -->
+            <div class="report_sect col-lg-4 col-md-12 ">
+              <div class="report_box">
+                  <div class="report_txt">
+                    <div class="hed_rpt_txt text-start mb-2">
+
+                      <h2>Yearly Sales Graph</h2>
+                      <p>Monthly Graph</p>
+                    </div>
+                    <div class="candiv">
+
+                      <canvas id="salesChart"></canvas>
+                    </div>
+                    <div class="legend">
+                        <div><span class="down-sales"></span> <p>Down Sales</p></div>
+                        <div><span class="up-sales"></span> <p>Up Sales</p></div>
+                        <div><span class="gray-sales"></span> <p>Empty Space</p></div>
+                    </div>
+                  </div>
+                  <div class="sdash_btn">
+                    <button>View More</button>
+                  </div>
+              </div>
+            </div>
+             
+            <!-- here we will show expense data in graph  -->
+            <div class="add_exp_sect col-lg-4 col-md-12" >
+              <div class="add_exp_box">
+                <div class="exp_txt position-relative">
+                  <div>
+                    <div class="billing_txt_exp">
+                      <h2>Up Coming Bills</h2>
+                    </div>
+                    
+                    <div class="bill-card">
+                      <div class="bill_card_box_cnt">
+
+                        <div class="bill_card_cont">
+  
+                          <div class="date">
+                              <span><b>16</b></span>
+                              <span>JUN</span>
+                          </div>
+                          <div class="details">
+                              <div class="logo">
+                                  <span>Figma</span>
+                              </div>
+                              <p>Figma Pro - Monthly</p>
+                              <small>Last Payment: June 17, 2023</small>
+                          </div>
+                          <div class="price">
+                              <strong>$583</strong>
+                          </div>
+                        </div>
+                        <div class="bill_card_cont">
+  
+                          <div class="date">
+                              <span><b>26</b></span>
+                              <span>Apr</span>
+                          </div>
+                          <div class="details">
+                              <div class="logo">
+                                  <span>Swim</span>
+                              </div>
+                              <p>Swiml Max - Yearly</p>
+                              <small>Last Payment: August 19, 2026</small>
+                          </div>
+                          <div class="price">
+                              <strong>$213</strong>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                
+                </div>
+                </div>
+                <div class="sdash_btn">
+                  <button>View More</button>
+                </div>
+              </div>
+            </div>
+            <!-- here we will show setting content  -->
+            <div class="setting_sect col-lg-4 col-md-12" >
+              <div class="set_box">
+                <div class="set_txt">
+                  <div class="settings-card">
+                    <h2>Settings</h2>
+                    <div class="setting-item">
+                        <label for="notifications">Enable Notifications</label>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="notifications">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label for="currency">Currency</label>
+                        <select id="currency">
+                            <option value="usd">USD</option>
+                            <option value="eur">EUR</option>
+                            <option value="gbp">GBP</option>
+                            <option value="inr">INR</option>
+                        </select>
+                    </div>
+                    <div class="setting-item">
+                        <label for="darkMode">Dark Mode</label>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="darkMode">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label for="language">Language</label>
+                        <select id="language">
+                            <option value="en">English</option>
+                            <option value="es">Spanish</option>
+                            <option value="fr">French</option>
+                            <option value="hi">Hindi</option>
+                        </select>
+                    </div>
+                </div>
+                </div>
+                <div class="sdash_btn">
+                  <button>View More</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- vision of our company -->
+
+  <div class="section container-fluid mt-4 mb-4">
+    <div class="vision_sect">
+      <h2 class="section_hed ">Our vision</h2>
+      <div class="container">
+        <div class="vision_box">
+          <h2>
+            What our compnay vision on personal finance
+          </h2>
+          <p class="lg-m-2">
+            Simplifying your financial journey. We provide the tools and insights you need to make informed decisions. Helping you build a confident and secure financial future.
+            Democratizing financial control. We're building a platform that empowers you to understand and master your finances. Creating a future where financial freedom is attainable for everyone.
+
+          </p>
+          <span>Manish Varma</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- testimonial  of our company  -->
+
+  <div class="section container-fluid">
+
+    <div class="testimonial_section">
+      <h2 class="section_hed"> Testimonial </h2>
+      <div class="container">
+        <div class="row flex-lg-nowrap">
+
+          <div class="col-lg-6 md-12">
+            <div class="testi_img">
+              <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/8103728/913758_697598.png" alt="">
+            </div>
+          </div>
+          <div class="col-lg-6 md-12">
+  
+            <div class="testi_txt justify-content-cente">
+              <div class="testi_txt_f">
+                <p>
+                  Financial clarity and control, simply delivered. My money, my way
+                </p>
+                <span class="d-flex justify-content-end">Manish Varma</span>
+              </div>
+              <div class="testi_txt_s">
+                <p>
+                  Empowering financial decisions. Tracking, insights, and control. Truly life-changing.
+                </p>
+                <span class="d-flex justify-content-end" >Pankaj</span>
+              </div>
+              <div class="testi_txt_t">
+                <p>
+                  Clear, concise, powerful. My finances organized, my future secured. Thank you.
+                </p>
+                <span class="d-flex justify-content-end">Yash</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+
+    
+      <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="#">About us</a>
+                <a href="#">Expense </a>
+                <a href="#">Report </a>
+                <a href="#">Setting</a>
+    
+            </div>
+    
+            <div class="social-icons">
+                <a href="#">
+                  <svg data-name="Layer 1" id="Layer_1" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:6.5px;}</style></defs><title/><path class="cls-1" d="M53.68,38.26v15.1H37.11V72H53.68v42H73.29V72H90l2-18.63H73.29V38.26c0-2.67,2.11-4,3-4.82,1.57-1.34,9.15-1.55,9.15-1.55h7.43V15a93.26,93.26,0,0,0-11.68-1C53.11,14,53.68,38.26,53.68,38.26Z"/></svg>
+                  </a>
+                <a href="#">
+                  <?xml version="1.0" ?><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 0 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" fill-rule="nonzero" fill="white"/></g></svg>
+    
+                </a>
+                <a href="#">
+                  <?xml version="1.0" ?><svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1227" viewBox="0 0 1200 1227" fill="none"><g clip-path="url(#clip0_1_2)"><path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" fill="white"/></g><defs><clipPath id="clip0_1_2"><rect width="1200" height="1227" fill="white"/></clipPath></defs></svg>
+                </a>
+                <a href="#">
+                  <?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.0//EN'  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'><svg enable-background="new 0 0 32 32" height="32px" id="Layer_1" version="1.0" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path clip-rule="evenodd" d="M16.003,0C7.17,0,0.008,7.162,0.008,15.997  c0,7.067,4.582,13.063,10.94,15.179c0.8,0.146,1.052-0.328,1.052-0.752c0-0.38,0.008-1.442,0-2.777  c-4.449,0.967-5.371-2.107-5.371-2.107c-0.727-1.848-1.775-2.34-1.775-2.34c-1.452-0.992,0.109-0.973,0.109-0.973  c1.605,0.113,2.451,1.649,2.451,1.649c1.427,2.443,3.743,1.737,4.654,1.329c0.146-1.034,0.56-1.739,1.017-2.139  c-3.552-0.404-7.286-1.776-7.286-7.906c0-1.747,0.623-3.174,1.646-4.292C7.28,10.464,6.73,8.837,7.602,6.634  c0,0,1.343-0.43,4.398,1.641c1.276-0.355,2.645-0.532,4.005-0.538c1.359,0.006,2.727,0.183,4.005,0.538  c3.055-2.07,4.396-1.641,4.396-1.641c0.872,2.203,0.323,3.83,0.159,4.234c1.023,1.118,1.644,2.545,1.644,4.292  c0,6.146-3.74,7.498-7.304,7.893C19.479,23.548,20,24.508,20,26c0,2,0,3.902,0,4.428c0,0.428,0.258,0.901,1.07,0.746  C27.422,29.055,32,23.062,32,15.997C32,7.162,24.838,0,16.003,0z" fill="#ffffff" fill-rule="evenodd"/><g/><g/><g/><g/><g/><g/></svg>
+                </a>
+                
+            </div>
+    
+            <div class="footer-copyright">
+                © 2025 Manish Varma, Inc. All rights reserved.
+            </div>
+        </div>
+      </footer>
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <script>
+
+    navbar = document.getElementById("navbar-container");
+    fetch('component/nav.html').then(
+      response => response.text()).then(data =>{
+        navbar.innerHTML = data;
+      }
+    )
+
+    // testinomal section javascript 
+    
+    document.addEventListener("DOMContentLoaded", function() {
+      const elements = document.querySelectorAll(".testi_txt > div");
+
+      const observer = new IntersectionObserver(entries => {
+      entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+              setTimeout(() => {
+                  entry.target.classList.add("show");
+              }, index * 1000); // Delay each box appearance
+          } 
+          else {
+                // Remove the class when it goes out of view to restart animation
+                entry.target.classList.remove("show");
+          }
+      });
+      }, { threshold: 0.8 });
+
+      elements.forEach(element => {
+        observer.observe(element);
+      });
+    });
+
+  </script>
+
+  <script>
+    // Get the canvas element
+    const ctx = document.getElementById("weeklyChart").getContext("2d");
+
+    // Data for the chart
+    const data = {
+        labels: ["17 Sun", "18 Mon", "19 Tue", "20 Wed", "21 Thu", "22 Fri", "23 Sat"],
+        datasets: [
+            {
+                label: "This week",
+                data: [200000, 30000, 50000, 120000, 80000, 150000, 100000],
+                backgroundColor: "#184D47",
+                borderRadius: 5,
+            },
+            {
+                label: "Last week",
+                data: [250000, 45000, 100000, 60000, 90000, 200000, 75000],
+                backgroundColor: "#FFC107",
+                borderRadius: 5,
+            }
+        ]
+    };
+
+    // Chart configuration
+    const config = {
+        type: "bar",
+        data: data,
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function (value) {
+                            return "$" + value / 1000 + "k";
+                        }
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    position: "top",
+                    labels: {
+                        usePointStyle: true
+                    }
+                }
+            }
+        }
+    };
+
+    // Create the chart
+    const weeklyChart = new Chart(ctx, config);
+
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const ctx = document.getElementById("gaugeChart").getContext("2d");
+      const needle = document.getElementById("needle");
+      const gaugeText = document.getElementById("gaugeText");
+
+      const target = 20000;
+      let achieved = 0; // Start from 0 and animate later
+      const finalAchieved = 12500;
+      const animationDuration = 2000; // Animation in ms
+      const startTime = performance.now();
+
+      function animateAchieved(time) {
+          const elapsedTime = time - startTime;
+          const progress = Math.min(elapsedTime / animationDuration, 1);
+          achieved = Math.floor(progress * finalAchieved);
+          document.getElementById("achievedValue").innerText = `$${achieved.toLocaleString()}`;
+          gaugeText.innerText = `${Math.floor(achieved / 1000)}K`;
+          
+          const percentage = (achieved / target) * 100;
+          const needleRotation = -90 + (percentage * 1.8);
+          needle.style.transform = `translate(-50%, -100%) rotate(${needleRotation}deg)`;
+
+          if (progress < 1) {
+              requestAnimationFrame(animateAchieved);
+          }
+      }
+
+      requestAnimationFrame(animateAchieved);
+
+      const data = {
+          datasets: [
+              {
+                  data: [finalAchieved, target - finalAchieved],  
+                  backgroundColor: ["#FFC107", "#E0E0E0"],
+                  borderWidth: 2,
+                  // borderRadius: 20
+                  // borderRadius: [20, 0,0,50, 10],
+                  borderRadius: [20],
+                  borderSborderJoinStyle: "round",
+                   borderJoinStyle: "round"
+              }
+          ]
+      };
+
+      const config = {
+          type: "doughnut",
+          data: data,
+          options: {
+              rotation: -90, // Starts from the left side
+              circumference: 180, // Semi-circle
+              cutout: "80%", // Donut style
+              responsive: true,
+              plugins: {
+                  legend: {
+                      display: false
+                  }
+              }
+          }
+      };
+
+
+
+      new Chart(ctx, config);
+    });
+
+
+
+  </script>
+
+  <script>
+    const ctxr = document.getElementById("salesChart").getContext("2d");
+
+    new Chart(ctxr, {
+        type: "bar",
+        data: {
+            labels: ["Jan", "Feb", "Mar", "Apr", "May" , "June"],
+            datasets: [
+                {
+                    label: "Down Sales",
+                    data: [20, 0, 0, 10, 0], // Yellow (Small portion at the bottom)
+                    backgroundColor: "#FFC107",
+                    borderRadius: { topLeft: 0, topRight: 0, bottomLeft: 10, bottomRight: 10 },
+                },
+                {
+                    label: "Up Sales",
+                    data: [0, 50, 60, 0, 40],  // Other months have up sales
+                    backgroundColor: "#124C3F",
+                    borderRadius: { topLeft: 0, topRight: 0, bottomLeft: 0, bottomRight: 0 },
+                    Width : 30
+                },
+                {
+                    label: "Empty Space",
+                    data: [80, 50, 40, 90, 60 ,120], // This fills the remaining height to 100%
+                    backgroundColor: "#E0E0E0",
+                    borderRadius: { topLeft: 15, topRight: 15, bottomLeft: 0, bottomRight: 0 },
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    stacked: true,
+                    grid: { display: false },
+                    ticks: {
+                        font: {
+                            size: 14 // Reduce label font size
+                        }
+                      },
+                      barPercentage: 0.7, // Decrease bar width
+                      categoryPercentage: 0.8 // Increase space between bars
+                
+                },
+                y: {
+                    stacked: true,
+                    grid: { display: false },
+                    ticks: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            },
+
+            plugins: {
+                legend: { display: false }
+            }
+        }
+    });
+  </script>
+
+
+  <!-- <script src="js\index_js.js"></script> -->
+
+</body>
+</html>
+
+<!-- https://www.radiustheme.com/demo/wordpress/themes/finwave/home-02/ -->
+<!-- https://preview.themeforest.net/item/finwave-business-and-finance-wordpress-theme/full_screen_preview/54049537?_ga=2.152274431.732513056.1741672312-394544718.1741672312 -->
+<!-- https://preview.themeforest.net/item/financer-business-and-finance-wordpress-theme/full_screen_preview/52139528?_ga=2.152274431.732513056.1741672312-394544718.1741672312 -->
+
+<!-- https://moneylover.me/ -->

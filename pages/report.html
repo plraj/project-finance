@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report</title>
+    <link rel="stylesheet" href="..\css\index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        .report_head_txt{
+            text-align: center;
+            font-family: "Aladin", system-ui;
+
+        }
+        .report_head_txt h2{
+            font-size: 50px !important;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div id="navbar-container">
+    </div>
+
+    <div class="report_section">
+        <div class="report_container">
+            <div class="report_head_txt mt-5 mb-5">
+                <h2>Report</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="section container-fluid text-center">
+        <div class="sdashld_pg ">
+          <div class="sdash_container container ">
+            <div class=" container">
+    
+              <div class="sdash_cnt_top row  mb-3">
+      
+                <!-- here we will show all data in graph fomrate what you are in profite or loss  -->
+                <div class="sdash_sect col-lg-12 col-md-12 ">
+                  <div class="sdash_box">
+                      <div class="sdashbox_txt">
+                        <div class="chart-container">
+                            <h2>Weekly Comparison <span class="dropdown">▾</span></h2>
+                            <canvas id="weeklyChart" width="964" height="481" style="display: block; box-sizing: border-box; height: 240px; width: 482px;"></canvas>
+                        </div>
+                      </div>
+                      <div class="sdash_btn">
+                          <button> View More</button>
+                      </div>
+                  </div>
+                </div>
+                <!-- here we will show data in circle graph formate expense , profite ,loss like this 
+                <div class="sdash_box_grph col-lg-5 col-md-12">
+                  <div class="sdash_box_grph_cont">
+                    <div class="sdash_ghpr_data">
+                      <div class="card border-0">
+                        <div class="card_had_txt">
+                          <h2>Target &amp; Achievement</h2>
+                        </div>
+                        <div class="card_header_txt d-flex justify-content-between align-items-cetner">
+                            <p>$20,000</p>
+                            <p>May, 2023</p>
+                        </div>
+                
+                        <div class="card_hed_data d-flex align-items-cetner">
+    
+                          <div class="targets">
+                              <div class="target-item">
+                                  <p>🏆 Target Achieved</p>
+                                  <h3 id="achievedValue">$12,500</h3>
+                              </div>
+                              <div class="target-item">
+                                  <p>🎯 This month Target</p>
+                                  <h3>$20,000</h3>
+                              </div>
+                          </div>
+                  
+                          <div class="gauge-container">
+                            <div class="gauage_cont_canv">
+                              <canvas id="gaugeChart" width="378" height="378" style="display: block; box-sizing: border-box; height: 189px; width: 189px;"></canvas>
+                              <div class="gauge-needle" id="needle" style="transform: translate(-50%, -100%) rotate(22.5deg);"></div>
+                              <div class="gauge-value" id="gaugeText">12K</div>
+                            </div>
+                            <p class="gauge-label">Target vs Achievement</p>
+                          </div>
+                        </div>
+                
+                    </div>
+                    </div>
+                      <div class="sdash_btn">
+                        <button> View More</button>
+                      </div>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+            <div class="container">
+              <div class="row flex-lg-nowrap mb-2">
+
+                <!-- here we will show data in circle graph formate expense , profite ,loss like this  -->
+                <div class="sdash_box_grph col-lg-4 col-md-12">
+                    <div class="sdash_box_grph_cont">
+                        <div class="sdash_ghpr_data">
+                        <div class="card border-0">
+                            <div class="card_had_txt">
+                            <h2>Target &amp; Achievement</h2>
+                            </div>
+                            <div class="card_header_txt d-flex justify-content-between align-items-cetner">
+                                <p>$20,000</p>
+                                <p>May, 2023</p>
+                            </div>
+                    
+                            <div class="card_hed_data d-flex align-items-cetner">
+        
+                            <div class="targets">
+                                <div class="target-item">
+                                    <p>🏆 Target Achieved</p>
+                                    <h3 id="achievedValue">$12,500</h3>
+                                </div>
+                                <div class="target-item">
+                                    <p>🎯 This month Target</p>
+                                    <h3>$20,000</h3>
+                                </div>
+                            </div>
+                    
+                            <div class="gauge-container">
+                                <div class="gauage_cont_canv">
+                                <canvas id="gaugeChart" width="378" height="378" style="display: block; box-sizing: border-box; height: 189px; width: 189px;"></canvas>
+                                <div class="gauge-needle" id="needle" style="transform: translate(-50%, -100%) rotate(22.5deg);"></div>
+                                <div class="gauge-value" id="gaugeText">12K</div>
+                                </div>
+                                <p class="gauge-label">Target vs Achievement</p>
+                            </div>
+                            </div>
+                    
+                        </div>
+                        </div>
+                        <div class="sdash_btn">
+                            <button> View More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- here we will show report types ddata  -->
+                <div class="report_sect col-lg-4 col-md-12 ">
+                  <div class="report_box">
+                      <div class="report_txt">
+                        <div class="hed_rpt_txt text-start mb-2">
+    
+                          <h2>Yearly Sales Graph</h2>
+                          <p>Monthly Graph</p>
+                        </div>
+                        <div class="candiv">
+    
+                          <canvas id="salesChart" width="536" height="268" style="display: block; box-sizing: border-box; height: 134px; width: 268px;"></canvas>
+                        </div>
+                        <div class="legend">
+                            <div><span class="down-sales"></span> <p>Down Sales</p></div>
+                            <div><span class="up-sales"></span> <p>Up Sales</p></div>
+                            <div><span class="gray-sales"></span> <p>Empty Space</p></div>
+                        </div>
+                      </div>
+                      <div class="sdash_btn">
+                        <button>View More</button>
+                      </div>
+                  </div>
+                </div>
+                 
+                <!-- here we will show expense data in graph  -->
+                <div class="add_exp_sect col-lg-4 col-md-12">
+                  <div class="add_exp_box">
+                    <div class="exp_txt position-relative">
+                      <div>
+                        <div class="billing_txt_exp">
+                          <h2>Up Coming Bills</h2>
+                        </div>
+                        
+                        <div class="bill-card">
+                          <div class="bill_card_box_cnt">
+    
+                            <div class="bill_card_cont">
+      
+                              <div class="date">
+                                  <span><b>16</b></span>
+                                  <span>JUN</span>
+                              </div>
+                              <div class="details">
+                                  <div class="logo">
+                                      <span>Figma</span>
+                                  </div>
+                                  <p>Figma Pro - Monthly</p>
+                                  <small>Last Payment: June 17, 2023</small>
+                              </div>
+                              <div class="price">
+                                  <strong>$583</strong>
+                              </div>
+                            </div>
+                            <div class="bill_card_cont">
+      
+                              <div class="date">
+                                  <span><b>26</b></span>
+                                  <span>Apr</span>
+                              </div>
+                              <div class="details">
+                                  <div class="logo">
+                                      <span>Swim</span>
+                                  </div>
+                                  <p>Swiml Max - Yearly</p>
+                                  <small>Last Payment: August 19, 2026</small>
+                              </div>
+                              <div class="price">
+                                  <strong>$213</strong>
+                              </div>
+                            </div>
+    
+                          </div>
+                        </div>
+                    
+                    </div>
+                    </div>
+                    <div class="sdash_btn">
+                      <button>View More</button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+    
+            </div>
+    
+          </div>
+          
+        </div>
+    </div>
+
+
+    <div id="footercontainer">
+    </div>
+
+    <script>
+        navbar_container = document.getElementById("navbar-container");
+        footer_container = document.getElementById("footercontainer")
+
+
+        fetch("../component/nav.html").then(
+            response => response.text()
+        ).then(data =>{
+            navbar_container.innerHTML = data
+        })
+        fetch('../component/footer.html').then(
+            response => response.text()
+        ).then(data =>{
+            footer_container.innerHTML = data
+        })
+    </script>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            
+            // Get the canvas element
+            const ctx = document.getElementById("weeklyChart").getContext("2d");
+    
+            // Data for the chart
+            const data = {
+                labels: ["17 Sun", "18 Mon", "19 Tue", "20 Wed", "21 Thu", "22 Fri", "23 Sat"],
+                datasets: [
+                    {
+                        label: "This week",
+                        data: [200000, 30000, 50000, 120000, 80000, 150000, 100000],
+                        backgroundColor: "#184D47",
+                        borderRadius: 5,
+                    },
+                    {
+                        label: "Last week",
+                        data: [250000, 45000, 100000, 60000, 90000, 200000, 75000],
+                        backgroundColor: "#FFC107",
+                        borderRadius: 5,
+                    }
+                ]
+            };
+    
+            // Chart configuration
+            const config = {
+                type: "bar",
+                data: data,
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function (value) {
+                                    return "$" + value / 1000 + "k";
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: "top",
+                            labels: {
+                                usePointStyle: true
+                            }
+                        }
+                    }
+                }
+            };
+    
+            // Create the chart
+            const weeklyChart = new Chart(ctx, config);
+        });
+
+    </script>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const ctx = document.getElementById("gaugeChart").getContext("2d");
+            const needle = document.getElementById("needle");
+            const gaugeText = document.getElementById("gaugeText");
+
+            const target = 20000;
+            let achieved = 0; // Start from 0 and animate later
+            const finalAchieved = 12500;
+            const animationDuration = 2000; // Animation in ms
+            const startTime = performance.now();
+
+            function animateAchieved(time) {
+                const elapsedTime = time - startTime;
+                const progress = Math.min(elapsedTime / animationDuration, 1);
+                achieved = Math.floor(progress * finalAchieved);
+                document.getElementById("achievedValue").innerText = `$${achieved.toLocaleString()}`;
+                gaugeText.innerText = `${Math.floor(achieved / 1000)}K`;
+                
+                const percentage = (achieved / target) * 100;
+                const needleRotation = -90 + (percentage * 1.8);
+                needle.style.transform = `translate(-50%, -100%) rotate(${needleRotation}deg)`;
+
+                if (progress < 1) {
+                    requestAnimationFrame(animateAchieved);
+                }
+            }
+
+            requestAnimationFrame(animateAchieved);
+
+            const data = {
+                datasets: [
+                    {
+                        data: [finalAchieved, target - finalAchieved],  
+                        backgroundColor: ["#FFC107", "#E0E0E0"],
+                        borderWidth: 2,
+                        // borderRadius: 20
+                        // borderRadius: [20, 0,0,50, 10],
+                        borderRadius: [20],
+                        borderSborderJoinStyle: "round",
+                        borderJoinStyle: "round"
+                    }
+                ]
+            };
+
+            const config = {
+                type: "doughnut",
+                data: data,
+                options: {
+                    rotation: -90, // Starts from the left side
+                    circumference: 180, // Semi-circle
+                    cutout: "80%", // Donut style
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            };
+
+
+
+        new Chart(ctx, config);
+        });
+
+
+
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const ctxr = document.getElementById("salesChart").getContext("2d");
+    
+            new Chart(ctxr, {
+                type: "bar",
+                data: {
+                    labels: ["Jan", "Feb", "Mar", "Apr", "May" , "June"],
+                    datasets: [
+                        {
+                            label: "Down Sales",
+                            data: [20, 0, 0, 10, 0], // Yellow (Small portion at the bottom)
+                            backgroundColor: "#FFC107",
+                            borderRadius: { topLeft: 0, topRight: 0, bottomLeft: 10, bottomRight: 10 },
+                        },
+                        {
+                            label: "Up Sales",
+                            data: [0, 50, 60, 0, 40],  // Other months have up sales
+                            backgroundColor: "#124C3F",
+                            borderRadius: { topLeft: 0, topRight: 0, bottomLeft: 0, bottomRight: 0 },
+                            Width : 30
+                        },
+                        {
+                            label: "Empty Space",
+                            data: [80, 50, 40, 90, 60 ,120], // This fills the remaining height to 100%
+                            backgroundColor: "#E0E0E0",
+                            borderRadius: { topLeft: 15, topRight: 15, bottomLeft: 0, bottomRight: 0 },
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            stacked: true,
+                            grid: { display: false },
+                            ticks: {
+                                font: {
+                                    size: 14 // Reduce label font size
+                                }
+                                },
+                                barPercentage: 0.7, // Decrease bar width
+                                categoryPercentage: 0.8 // Increase space between bars
+                        
+                        },
+                        y: {
+                            stacked: true,
+                            grid: { display: false },
+                            ticks: {
+                                beginAtZero: true,
+                                max: 100
+                            }
+                        }
+                    },
+    
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+        })
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

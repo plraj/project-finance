@@ -1,0 +1,162 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Aladin&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Kurale&family=Markazi+Text:wght@400..700&family=Modak&family=Mystery+Quest&family=Sarala:wght@400;700&display=swap');
+
+
+:root{
+ --mainfont : "Funnel Sans", sans-serif;
+ --secondfont : "Aladin", system-ui;
+ --parafont : "Markazi Text", serif;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    margin: auto;
+}
+
+h1, h3 {
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.invoice-title {
+    font-size: 24px;
+    border: none;
+    background: transparent;
+}
+.logo p , .signature p{
+    font-size: 20px;
+    font-family: var(--mainfont);
+}
+.logo, .signature {
+    background: #ddd;
+    padding: 10px;
+    /* width: 80px; */
+    text-align: center;
+    font-size: 14px;
+    border-radius: 10px;
+
+}
+.signature{
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+    
+}
+/* .signature input{
+    max-width: 30%;
+} */
+
+.invoice-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.from-section, .bill-section {
+    width: 45%;
+}
+
+.invoice-info {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.totals {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.container_bnksign{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container_bnksign .bankdetails{
+    max-width: 50%;
+}
+.notes {
+    margin-top: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+
+@media (max-width:768px) {
+    .header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .invoice-section, .invoice-info, .container_bnksign{
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .container_bnksign .bankdetails{
+        max-width: 100%;
+    }
+    #taxpercentage{
+        width: 10%;
+        padding: 0 10px;
+        text-align: center;
+    }
+    .signature{
+        width: 100%;
+    }
+    .notes {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .from-section, .bill-section {
+        width: 100%;
+    }
+    
+
+}

@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Aladin&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Kurale&family=Markazi+Text:wght@400..700&family=Modak&family=Mystery+Quest&family=Sarala:wght@400;700&display=swap');
+
+
+:root{
+ --mainfont : "Funnel Sans", sans-serif;
+ --secondfont : "Aladin", system-ui;
+ --parafont : "Markazi Text", serif;
+
+}
+button{
+    border: none;
+    background: #198754;
+    color: white;
+    text-transform: capitalize;
+    padding: 5px 12px;
+    border-radius: 5px !important;
+    box-sizing: border-box;
+}
+button:hover{
+    background-color: white;
+    color: #198754;
+    transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
+    border: 2px solid #198754;
+    font-weight: 600;
+
+}
+
+.add_inc_exp_cont{
+    font-family: var(--mainfont);
+}
+
+.inc_exp_head_txt {
+    margin-bottom: 30px;
+}
+.add_inc_exp_cont h2 {
+    font-family: var(--secondfont);
+    margin: 0;
+
+}
+.add_inc_exp_cont p , h3{margin-bottom: 0px;}
+
+.inc_exp_dt{
+    display: flex;
+    justify-content: space-between;
+    background: #f8f9fa;
+    padding: 5px 10px;
+    align-items: center;
+    
+    margin-bottom: 20px;
+}
+
+.tlt_blane{
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
+    background: white;
+    padding: 0px 10px;
+    /* border: 1px solid rgb(184, 184, 184); */
+    border-radius: 10px;
+}
+
+.income_container , .expense_container{
+    background: #ffffff;
+    box-sizing: border-box;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin: 10px 10px 10px 0px;
+    padding: 10px;
+    min-height: 450px;
+
+}
+
+.inc_cont_head , .exp_cont_head{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+
+}
+
+
+.inc_txt_detls , .exp_txt_detls{
+    padding: 5px 15px;
+    background: #f8f9fa;
+    /* background: #ecf3f3; */
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.inc_on_date , .exp_on_date {
+    color: grey;
+}
+
+.inc_dtls_txt_writen , .exp_dtls_txt_writen{
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    align-items: center;
+}
+.inc_dtls_txt_writen span{
+    color: #198754;
+    font-weight: 600;
+}
+.inc_dtls_txt_writen h3 , .exp_dtls_txt_writen h3{
+    font-size: 25px;
+}
+.exp_dtls_txt_writen span{
+    color: red;
+    font-weight: 600;
+}

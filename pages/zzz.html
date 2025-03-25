@@ -1,0 +1,206 @@
+<html>
+<head>
+    <title>Invoice ${invoiceNumber}</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        h2{
+            text-align: center;
+            font-size: 30px;
+        }
+        .company_logo{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid grey;
+        }
+        .container{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        .invoiceditl > div{
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        h3, p{
+            margin: 8px;
+        }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        /* th { border: 1px solid black; padding: 8px; text-align: center; } */
+        th{
+            border-top: 2px solid grey;
+            padding: 15px 8px;
+            text-align: center;
+            border-bottom: 2px solid grey;
+        }
+        tr td:first-child{
+            width: 40%;
+        }
+        td:first-child{
+            text-align: left;
+            padding-left: 10px;
+        }
+        td{
+            text-align: center;
+            padding: 12px 5px;
+        }
+        tbody{
+            
+            border-bottom: 2px solid grey;
+        }
+        .totals{
+            text-align: right;
+            justify-items: right;
+        }
+        .totals > div{
+            display: flex;
+            gap: 10px;
+            margin-right: 28px;
+        }
+        .bankdtls p {
+            margin-left: 0px;
+        }
+        .fotdtls{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .signature{
+            margin-top: 20px;
+            text-align: center;
+        }
+        .sign{
+            display: contents;
+
+        }
+        .notes{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .notes h3{
+            margin-left:0px ;
+            margin-top: 20px; 
+        }
+        
+    </style>
+</head>
+<body>
+    <h2>Invoice</h2>
+
+    <div class="company_logo">
+        <div class="logo">
+            <img src="../logo.jpg" alt="">
+        </div>
+        <div class="company_ditls">
+            <p>${billToDetails}</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="issuedto">
+            <h3>ISSUED TO :</h3>
+
+            <div class="issued_ditls">
+                <p>${billToDetails}</p>
+                <p>Manish Kumar</p>
+                <p>Manish Kumar</p>
+                <p>Manish Kumar</p>
+            </div>
+        </div>
+        <div class="invoiceditl">
+            <div class="invoicenoo">
+                <h3>INVOICE NO : </h3>`
+                <h3> ${invoiceNumber} </h3>
+            </div>
+            <div class="invoicedate">
+                <div>
+                    <p>Date : </p>
+                </div>
+                <div>
+                    <p>${date} </p>
+                </div>
+            </div>
+            <div class="invoiceitemtype">
+                <p>Items : </p>
+                <p>${items} </p>
+            </div>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Rate</th>
+                <th>Qty</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            ${itemsList.map(item => `
+                <tr>
+                    <td>${item.desc}</td>
+                    <td>₹${item.rate.toFixed(2)}</td>
+                    <td>${item.qty}</td>
+                    <td>₹${item.amount.toFixed(2)}</td>
+                </tr>
+            `).join('')}
+        </tbody>
+    </table>
+    
+    <div class="totals">
+        <div class="subtotals">
+            <p>Subtotal</p>
+            <p>₹${subtotal.toFixed(2)}</p>
+        </div>
+        <div class="totalstax">
+            <p>Tax</p>
+            <p>15 %</p>
+        </div>
+        <div class="totalsss">
+            <p>Total</p>
+            <p>₹${total.toFixed(2)}</p>
+        </div>
+    </div>
+
+    <div class="fotdtls">
+
+        <div class="bankdtls">
+            <h2>BANK DETAILS</h2>
+            <P>Bank Name: ${}</P>
+            <P>Account Name: ${}</P>
+            <P>Account No. : ${}</P>
+            <P>UPI Id. : ${}</P>
+        </div>
+
+        <div class="signature">
+            <div class="sign">
+                <img src="../Untitled design.jpg" alt="">
+            </div>
+            <p>${positionname}</p>
+        </div>
+
+        
+    </div>
+    <div class="notes">
+        <h3>Notes:</h3>
+        <p>${notes}</p>
+    </div>
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h2>Invoice</h2>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Loading </title>
+</head>
+<body>
+    <div class="container">
+        <div class="loader">
+            <div class="heart heartflip" id="hearpg1">
+                <img src="heart.png" alt="">
+            </div>
+            <div class="heart3 heartflip" id="hearpg3">
+                <img src="heart.png" alt="">
+            </div>
+            <div class="progress-bar">
+                <div class="pgbr_heart" id ="pgbr_heart">
+                    <?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg height="30px" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="40px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="_x31_66_x2C__Heart_x2C__Love_x2C__Like_x2C__Twitter"><g><path d="M365.4,59.628c60.56,0,109.6,49.03,109.6,109.47c0,109.47-109.6,171.8-219.06,281.271    C146.47,340.898,37,278.568,37,169.099c0-60.44,49.04-109.47,109.47-109.47c54.73,0,82.1,27.37,109.47,82.1    C283.3,86.999,310.67,59.628,365.4,59.628z" style="fill:#ffffff;"/></g></g><g id="Layer_1"/></svg>
+                </div>
+                <div class="progress" id="progress"></div>
+            </div>
+            <div class="heart2 heartflip" id="hearpg2">
+                <img src="heart.png" alt="">
+            </div>
+        </div>
+        <p id="loading-text">Loading Love ...</p>
+        <button id="clickme" href = "bussmoving.html"> Click Me</button>
+    </div>
+    <script src="script.js"></script>
+
+    <script>
+        let progress = 0;
+        let heart_prog = -8;
+        let hearrotate = 90;
+        const progressBar = document.getElementById('progress');
+        const loadingText = document.getElementById('loading-text');
+        const pgbr_heart = document.getElementById("pgbr_heart");
+        const hearpg1 = document.getElementById("hearpg1");
+        const hearpg2 = document.getElementById("hearpg2");
+        const hearpg3 = document.getElementById("hearpg3");
+        const clickme = document.getElementById("clickme");
+
+        const interval = setInterval(() => {
+            if (progress >= 100) {
+                clearInterval(interval);
+                loadingText.textContent = "Love Loaded!";
+                clickme.style.display ="inline";
+                
+            } else {
+                progress += 2;
+                heart_prog +=2;
+                progressBar.style.width = progress + '%';
+                loadingText.textContent = `Loading Love ... ${progress}%`;
+                pgbr_heart.style.left= heart_prog + '%';
+                if (progress == 2) {
+                    hearpg1.classList.add('pop');
+                }
+                if (progress == 50) {
+                    hearpg3.classList.add('pop');
+                }
+                if(progress==98){
+                    hearpg2.classList.add('pop');
+                }
+            }
+        }, 100);
+
+
+        
+
+    </script>
+</body>
+</html>
