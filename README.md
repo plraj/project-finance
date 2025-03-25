@@ -10,7 +10,7 @@ A simple yet powerful finance tracker to manage your income and expenses, visual
 ✅ **Export Reports** – Download financial summaries as CSV/PDF  
 
 ## 🖥️ Live Demo
-🔗 [Live Project](https://your-live-demo-link.com) 
+🔗 [Live Project](https://plraj.github.io/project-finance/) 
 
 
 ## 🔧 Tech Stack
