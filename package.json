@@ -1,0 +1,20 @@
+{
+  "name": "finance-tracker",
+  "version": "1.0.0",
+  "description": "A personal finance tracker to manage income, expenses, and generate invoices.",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server",
+    "build": "echo 'Building Project...'",
+    "test": "echo 'Running Tests...'"
+  },
+  "dependencies": {
+    "chart.js": "^3.7.1",
+    "jspdf": "^2.5.1"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  },
+  "author": "Manish Varma",
+  "license": "MIT"
+}
